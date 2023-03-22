@@ -1,9 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import BookingForm from '../components/BookingForm';
 import Bookings from '../components/Bookings';
+import { getBookings } from './Service';
 
 const Hotel = ()=>{
     const [bookings, setBookings] = useState([]);
+
+    useEffect(()=>{
+        getBookings().then((allBookings)=>{
+            setBookings(allBookings)
+        })
+    }, [])
 
     const addBooking = ()=>{
         return null

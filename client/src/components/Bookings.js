@@ -24,7 +24,7 @@ const Bookings = ({bookings, deleteBooking, changeChecked})=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <Booking/>
+                    {bookingList}
                 </tbody>
             </table>
         </>

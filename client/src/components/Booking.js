@@ -11,7 +11,16 @@ const Booking = ({booking, deleteBooking, changeChecked})=>{
     }
 
     return(
-        <h1>Booking</h1>
+        <>
+            <tr>
+                <td>{booking.name}</td>
+                <td>{booking.email}</td>
+                <td>{booking.date}</td>
+                <td>{booking.checkedIn.toString()}</td>
+                <td><button onClick={onDeleteClick}>Delete</button></td>
+                <td><button onClick={onChangeClick}>Change</button></td>
+            </tr>
+        </>
     )
 }
 
