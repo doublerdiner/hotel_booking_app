@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Booking = ({booking, deleteBooking, changeChecked})=>{
+const Booking = ({booking, removeBooking, changeChecked})=>{
     
     const onDeleteClick = ()=>{
-        return null;
+        removeBooking(booking);
     }
 
     const onChangeClick = ()=>{
-        return null;
+        changeChecked(booking);
     }
 
     return(
@@ -16,9 +16,9 @@ const Booking = ({booking, deleteBooking, changeChecked})=>{
                 <td>{booking.name}</td>
                 <td>{booking.email}</td>
                 <td>{booking.date}</td>
-                <td>{booking.checkedIn.toString()}</td>
-                <td><button onClick={onDeleteClick}>Delete</button></td>
-                <td><button onClick={onChangeClick}>Change</button></td>
+                {booking.checkedIn ? <td><i className="fa fa-check-circle-o"></i></td> : <td><i className="fa fa-remove"></i></td>}
+                <td><button onClick={onDeleteClick} className="fa fa-trash-o"></button></td>
+                <td><button onClick={onChangeClick}>{booking.checkedIn ? "Check Out" : "Check In"}</button></td>
             </tr>
         </>
     )
