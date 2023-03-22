@@ -1,6 +1,15 @@
 import React from 'react';
 
-const Booking = ()=>{
+const Booking = ({booking, deleteBooking, changeChecked})=>{
+    
+    const onDeleteClick = ()=>{
+        return null;
+    }
+
+    const onChangeClick = ()=>{
+        return null;
+    }
+
     return(
         <h1>Booking</h1>
     )
